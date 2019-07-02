@@ -1,0 +1,19 @@
+{
+  "name": "algorithmic-complexity",
+  "version": "1.0.0",
+  "description": "Understand efficiency as one of the dimensions of a good piece of code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shektor/algorithmic-complexity.git"
+  },
+  "author": "Steven Hektor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shektor/algorithmic-complexity/issues"
+  },
+  "homepage": "https://github.com/shektor/algorithmic-complexity#readme"
+}
