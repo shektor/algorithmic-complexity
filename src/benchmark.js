@@ -15,6 +15,12 @@ class Benchmark {
 
     return duration
   }
+
+  generateArray (size) {
+    const array = Array(size).fill().map(() => Math.round(Math.random() * 100))
+
+    return array
+  }
 }
 
 module.exports = {
