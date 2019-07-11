@@ -21,6 +21,19 @@ class Benchmark {
 
     return array
   }
+
+  test (fn) {
+    let runTimes = []
+
+    for (let size = 50000; size <= 1000000; size = size + 50000) {
+      const array = this.generateArray(size)
+      const time = this.timeThis(fn, array)
+
+      runTimes.push([size, time])
+    }
+
+    return runTimes
+  }
 }
 
 module.exports = {

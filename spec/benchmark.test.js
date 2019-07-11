@@ -56,10 +56,51 @@ describe('Benchmark', () => {
 
       const benchmark = new Benchmark()
       const size = 3
-      
+
       const returnArray = benchmark.generateArray(size)
 
       expect(returnArray).toEqual([100, 100, 100])
+    })
+  })
+
+  describe('#test', () => {
+    test('it returns array with algorithm time taken to execute on increasing array sizes', () => {
+      jest
+        .spyOn(global.Date, 'now')
+        .mockImplementation(() => new Date('2019-07-02T20:03:50.895Z').valueOf())
+
+      const benchmark = new Benchmark()
+
+      jest
+        .spyOn(benchmark, 'generateArray')
+        .mockImplementation(() => [1])
+
+      const aFunction = (array) => { return array }
+
+      const returnArray = [
+        [ 50000, 0 ],
+        [ 100000, 0 ],
+        [ 150000, 0 ],
+        [ 200000, 0 ],
+        [ 250000, 0 ],
+        [ 300000, 0 ],
+        [ 350000, 0 ],
+        [ 400000, 0 ],
+        [ 450000, 0 ],
+        [ 500000, 0 ],
+        [ 550000, 0 ],
+        [ 600000, 0 ],
+        [ 650000, 0 ],
+        [ 700000, 0 ],
+        [ 750000, 0 ],
+        [ 800000, 0 ],
+        [ 850000, 0 ],
+        [ 900000, 0 ],
+        [ 950000, 0 ],
+        [ 1000000, 0 ]
+      ]
+
+      expect(benchmark.test(aFunction)).toEqual(returnArray)
     })
   })
 })
