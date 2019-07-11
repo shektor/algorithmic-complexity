@@ -6,6 +6,15 @@ class Benchmark {
   durationBetween (startTime, endTime) {
     return endTime - startTime
   }
+
+  timeThis (fn, array) {
+    const startTime = this.timeNow()
+    fn(array)
+    const endTime = this.timeNow()
+    const duration = this.durationBetween(startTime, endTime)
+
+    return duration
+  }
 }
 
 module.exports = {
