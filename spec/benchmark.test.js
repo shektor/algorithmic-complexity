@@ -69,7 +69,9 @@ describe('Benchmark', () => {
         .spyOn(global.Date, 'now')
         .mockImplementation(() => new Date('2019-07-02T20:03:50.895Z').valueOf())
 
-      const benchmark = new Benchmark()
+      const stepIncrease = 50000
+      const stepMax = 1000000
+      const benchmark = new Benchmark(stepIncrease, stepMax)
 
       jest
         .spyOn(benchmark, 'generateArray')

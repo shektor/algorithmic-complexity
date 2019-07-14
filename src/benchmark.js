@@ -1,4 +1,9 @@
 class Benchmark {
+  constructor (step = 50000, max = 1000000) {
+    this.step = step
+    this.max = max
+  }
+
   timeNow () {
     return new Date(Date.now())
   }
@@ -25,7 +30,7 @@ class Benchmark {
   test (fn) {
     let runTimes = []
 
-    for (let size = 50000; size <= 1000000; size = size + 50000) {
+    for (let size = this.step; size <= this.max; size += this.step) {
       const array = this.generateArray(size)
       const time = this.timeThis(fn, array)
 
