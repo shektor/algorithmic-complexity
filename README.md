@@ -38,23 +38,6 @@ function myAlgorithm (array) {
 module.exports = myAlgorithm
 ```
 
----
-### Benchmark
-
-Can be used to time the duration it takes to run an algorithm against a randomised array that increases in length at specified steps.
-
-#### Syntax
-```
-new Benchmark([lengthIncrease, maxLength])
-```
-#### Parameters
-`lengthIncrease` Optional 
-- Integer value representing the increase in length of the array passed to the algorithm being tested after each run. The default is 50000.
-
-`maxLength` Optional
-- Integer value representing the max array length the algorithm will be tested against. The default is 1000000.
----
-
 Algorithms can be timed using `benchmarkRunner.js` by requiring the module, and passing it to the `Benchmark.test` function.
 ```javascript
 const myAlgorithm = require('./src/algorithms/myAlgorithm')
@@ -90,3 +73,23 @@ The runner can be executed in the terminal using `node`, with output returned to
 ```
 
 The `test` function returns an array, with each element being an array where the first value is the length of the randomised array passed to the algorithm, and the second value the duration in milliseconds.
+
+## Benchmark Documentation
+
+Can be used to time the duration it takes to run an algorithm against a randomised array that increases in length at specified steps.
+
+#### Syntax
+```
+new Benchmark([lengthIncrease, maxLength])
+```
+#### Parameters
+`lengthIncrease` Optional 
+- Integer value representing the increase in length of the array passed to the algorithm being tested after each run. The default is 50000.
+
+`maxLength` Optional
+- Integer value representing the max array length the algorithm will be tested against. The default is 1000000.
+
+### Methods
+
+`.test(function)`
+- Returns an array with each element composed of an array containing milliseconds taken to run pass function against array length. The method accepts a function that is executed inside the method, with an array passed as an arguement to the function. 
